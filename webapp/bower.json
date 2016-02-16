@@ -1,0 +1,16 @@
+{
+  "name": "sandbox",
+  "homepage": "https://github.com/IO-Ninjas/sandbox-repository",
+  "authors": [
+    "jfastnacht <fastnach@fh-brandenburg.de>"
+  ],
+  "description": "Sandbox webapp",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "Apache 2.0",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.x",
+    "foundation": "5.x"
+  }
+}
