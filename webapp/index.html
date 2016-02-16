@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Angular + Foundation</title>
-        <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+        <link rel="stylesheet" href="bower_components/foundation-apps/dist/css/foundation-apps.css">
     </head>
     <body ng-init="r=255; g=0; b=123; a=0.7">
         R:
@@ -19,21 +19,11 @@
 
         <div style="width: 300px; height: 100px; background-color: rgba({{r}}, {{g}}, {{b}}, {{a}});"></div>
 
-        <div class="range-slider" data-slider data-options="display_selector: #sliderOutput3;">
-            <span class="range-slider-handle" role="slider" tabindex="0"></span>
-            <span class="range-slider-active-segment"></span>
-            <input type="hidden">
-        </div>
-        <div>
-            <span id="sliderOutput3"></span>
-        </div>
-
         <!-- JavaScript -->
         <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/foundation/js/foundation.js"></script>
+        <script src="bower_components/foundation-apps/dist/js/foundation-apps.js"></script>
+        <script src="bower_components/foundation-apps/dist/js/foundation-apps-templates.js"></script>
         <script>
-            $(document).foundation();
             var meineDemoApp = angular.module('meineDemoApp', []);
         </script>
     </body>
