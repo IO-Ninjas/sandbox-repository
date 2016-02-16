@@ -1,0 +1,13 @@
+{
+  "authors": [
+    "Sebastian Kapunkt"
+  ],
+
+  "description": "i dont know what you want",
+  "private": true,
+
+  "dependencies": {
+    "angular": "angularjs#^1.5.0",
+    "foundation": "^5.5.3"
+  }
+}
