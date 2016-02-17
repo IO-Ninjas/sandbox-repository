@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="meineDemoApp" class="no-js" lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Angular + Angular Material</title>
+        <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+        <link rel="stylesheet" href="bower_components/angular-material/angular-material.layouts.css">
+    </head>
+    <body ng-init="r=255; g=0; b=123; a=0.7" layout="column" layout-fill>
+        <header>
+            <md-toolbar>
+                <h1>ColorPicker</h1>
+            </md-toolbar>
+        </header>
+        <main flex>
+            <md-content layout="column">
+                <div layout="row">
+                    <h2 flex="10">Rot:</h2>
+                    <md-slider flex name="color_r" min="0" max="255" step="1" ng-model="r" aria-label="Rot"></md-slider>
+                    <span flex="5"></span>
+                </div>
+                <div layout="row">
+                    <h2 flex="10">Grün:</h2>
+                    <md-slider flex name="color_g" min="0" max="255" step="1" ng-model="g" aria-label="Grün"></md-slider>
+                    <span flex="5"></span>
+                </div>
+                <div layout="row">
+                    <h2 flex="10">Blau:</h2>
+                    <md-slider flex name="color_b" min="0" max="255" step="1" ng-model="b" aria-label="Blau"></md-slider>
+                    <span flex="5"></span>
+                </div>
+                <div layout="row">
+                    <h2 flex="10">Alpha:</h2>
+                    <md-slider flex name="color_a" min="0" max="1" step="0.01" ng-model="a" aria-label="Alpha"></md-slider>
+                    <span flex="5"></span>
+                </div>
+            </md-content>
+        </main>
+        <footer>
+            <div style="width: 100%; height: 200px; background-color: rgba({{r}}, {{g}}, {{b}}, {{a}});"></div>
+        </footer>
+
+        <!-- Angular -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.js"></script>
+        <script src="bower_components/angular-material/angular-material.js"></script>
+
+        <!-- Custom -->
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>
