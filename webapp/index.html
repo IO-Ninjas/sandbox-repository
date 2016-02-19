@@ -1,24 +1,75 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="colorPickerApp">
 
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bower_components/foundation-apps/dist/css/foundation-apps.css">
 </head>
 
-<body ng-init="r=255; g=0; b=123; a=0.7">
-  R:
-  <input type="range" name="color_r" min="0" max="255" step="1" ng-model="r">
-  <br> G:
-  <input type="range" name="color_g" min="0" max="255" step="1" ng-model="g">
-  <br> B:
-  <input type="range" name="color_b" min="0" max="255" step="1" ng-model="b">
-  <br> A:
-  <input type="range" name="color_a" min="0" max="255" step="1" ng-model="a">
-  <br>
+<body ng-controller="MainCtrl">
+<h1 style="margin-left: auto; margin-right: auto; text-align: center">AngularJS + Foundation ColorPicker</h1>
+<div style="margin-left:50%; left: -150px; position: absolute;">
+    <div style="width: 300px;">
+        <color-picker init-r="255"
+                      init-g="0"
+                      init-b="150"
+                      init-a="1.0" on-change="onColorChange (r,g,b,a)">
+        </color-picker>
+    </div>
+    <div style="width: 300px; margin-top: 20px;">
+        <color-picker init-r="33"
+                      init-g="120"
+                      init-b="255"
+                      init-a="0.5" on-change="onColorChange (r,g,b,a)">
+        </color-picker>
+    </div>
+</div>
 
-  <div style="width: 300px; height: 100px; background-color: rgba({{r}}, {{g}}, {{b}}, {{a}});"></div>
+<!-- JavaScript -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/foundation-apps/dist/js/foundation-apps.js"></script>
+<script src="bower_components/foundation-apps/dist/js/foundation-apps-templates.js"></script>
+<script>
+    var colorPickerApp = angular.module('colorPickerApp', []);
+    colorPickerApp.controller('MainCtrl', function ($scope) {
+        $scope.onColorChange = function (r, g, b, a) {
+            console.log('onColorChange', r, g, b, a);
+        };
+    });
 
-  <script src="bower_components/angular/angular.min.js"></script>
+    colorPickerApp.directive('colorPicker', function () {
+        return {
+
+            scope: {
+                r: '@initR',
+                g: '@initG',
+                b: '@initB',
+                a: '@initA',
+                onChange: '&'
+            },
+            restrict: 'E',
+            templateUrl: 'directiv/colorPickerTemplate.html', link: function (scope) {
+                var COLORS = ['r', 'g', 'b', 'a'];
+                COLORS.forEach(function (value) {
+                    scope.$watch(value, function (newValue, oldValue) {
+                        if (newValue !== oldValue) {
+                            if (angular.isFunction(scope.onChange)) {
+                                scope.onChange(generateColorChangeObject());
+                            }
+                        }
+                    });
+                });
+                var generateColorChangeObject = function () {
+                    var obj = {};
+                    COLORS.forEach(function (value) {
+                        obj[value] = scope[value];
+                    });
+                    return obj;
+                };
+            }
+        };
+    });
+</script>
 </body>
 
 </html>
