@@ -3,11 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="bower_components/foundation-apps/dist/css/foundation-apps.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Angular + Angular Material</title>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.layouts.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body ng-controller="MainCtrl">
-<h1 style="margin-left: auto; margin-right: auto; text-align: center">AngularJS + Foundation ColorPicker</h1>
+<h1 style="margin-left: auto; margin-right: auto; text-align: center">AngularJS + Angular Material</h1>
 <div style="margin-left:50%; left: -150px; position: absolute;">
     <div style="width: 300px;">
         <color-picker init-r="255"
@@ -27,17 +32,14 @@
 
 <!-- JavaScript -->
 <script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/foundation-apps/dist/js/foundation-apps.js"></script>
-<script src="bower_components/foundation-apps/dist/js/foundation-apps-templates.js"></script>
-<script>
-var colorPickerApp = angular.module('colorPickerApp', []);
-colorPickerApp.controller('MainCtrl', function ($scope) {
-$scope.onColorChange = function (r, g, b, a) {
-console.log('onColorChange', r, g, b, a);
-};
-});
-</script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+
+<script src="js/app.js"></script>
 <script src="js/colorPickerTemplate.js"></script>
+
 </body>
 
 </html>

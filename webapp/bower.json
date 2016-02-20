@@ -8,7 +8,7 @@
   "private": true,
 
   "dependencies": {
-    "angular": "angularjs#^1.5.0",
-    "foundation-apps": "1.x"
+    "angular": "1.5.x",
+    "angular-material": "1.x"
   }
 }

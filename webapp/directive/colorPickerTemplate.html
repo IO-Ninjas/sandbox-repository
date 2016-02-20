@@ -5,18 +5,40 @@
     <title>Title</title>
 </head>
 <body>
-R:
-<input type="range" min="0" max="255" ng-model="r" step="1"><br>
-G:
-<input type="range" min="0" max="255" ng-model="g" step="1"><br>
-B:
-<input type="range" min="0" max="255" ng-model="b" step="1"><br>
-A:
-<input type="range" min="0" max="1" step="0.01" ng-model="a"><br>
+<div layout="row">
+    <div flex="10" layout="" layout-align="center center">
+        <span class="md-body-1">R:</span>
+    </div>
+    <md-slider flex="" min="0" max="255" ng-model="r" aria-label="red" id="red-slider" class="">
+    </md-slider>
+</div>
+<div layout="row">
+    <div flex="10" layout="" layout-align="center center">
+        <span class="md-body-1">G:</span>
+    </div>
+    <md-slider flex="" min="0" max="255" ng-model="g" aria-label="red" id="green-slider" class="">
+    </md-slider>
+</div>
+<div layout="row">
+    <div flex="10" layout="" layout-align="center center">
+        <span class="md-body-1">B:</span>
+    </div>
+    <md-slider flex="" min="0" max="255" ng-model="b" aria-label="red" id="blue-slider" class="">
+    </md-slider>
+</div>
+<div layout="row">
+    <div flex="10" layout="" layout-align="center center">
+        <span class="md-body-1">A:</span>
+    </div>
+    <md-slider flex="" step="0.1" min="0" max="1" ng-model="a" aria-label="red" id="alpha-slider" class="">
+    </md-slider>
+</div>
 
 <div style="width: 300px; height: 100px; background-color:
     rgba({{ r }}, {{ g }}, {{ b }}, {{ a }});">
 </div>
+
+
 
 </body>
 </html>
